@@ -1,0 +1,17 @@
+.container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 90%;
+    box-sizing: border-box;
+    justify-content: center;
+
+}
+.container>div{
+    margin:10px;
+    justify-self: center;
+    align-self: center;
+    width:60%;
+    height:40%;
+    border:black 1px solid;
+    padding: 20px;
+}

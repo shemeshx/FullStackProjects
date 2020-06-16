@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.css"
+      integrity="sha256-IvM9nJf/b5l2RoebiFno92E5ONttVyaEEsdemDC6iQA="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="loader.css" />
+    <link href="https://fonts.googleapis.com/css?family=Averia+Serif+Libre|Bree+Serif|Courgette&display=swap" rel="stylesheet"><link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css"
+      integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E="
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"
+      integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+    
+    <script src="index.js"></script>
+   
+     <title>Crypto</title>
+  </head>
+  
+  <body >
+      <div class="wrap parallax-window"  data-parallax="scroll" data-image-src="background.jpg">
+    
+      <nav id="nav" class="navbar navbar-dark bg-dark fixed-top ">
+          <a class="navbar-brand" href="#">
+              <img src="https://img.icons8.com/officel/30/000000/deposit.png">
+              Crypto  
+          </a>
+          <ul class="nav nav-pills mr-auto">
+            <li class="nav-item">
+              <a id="Home" class="nav-link" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+              <a id="LiveReports" class="nav-link" href="#">Live Reports</a>
+            </li>
+            <li class="nav-item">
+              <a id="About" class="nav-link" href="#">About</a>
+            </li>
+          </ul>
+       
+          <form class="form-inline navbar-right">
+            <input
+              id="searchInp"
+              class="form-control mr-sm-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button
+              id="searchBtn"
+              class="btn btn-outline-success my-2 my-sm-0"
+              type="button"
+            >
+              Search
+            </button>
+          </form>
+        </nav>
+    
+    
+    <div class="container"> 
+        
+    <div class="row justify-content-center" id="info">
+          
+      </div>
+    </div>
+  
+    <div
+      id="popup"
+      class="modal fade"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="gridModalLabel"
+    >
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title" id="gridModalLabel">Select coin to remove :</h4>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">×</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="popupBody" class="container-fluid"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+</html>

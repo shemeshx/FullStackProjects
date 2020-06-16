@@ -1,0 +1,43 @@
+.search{
+    position: absolute;
+    right:2%;
+}
+mwlResizable {
+    box-sizing: border-box;
+}
+.sidebar{
+    border-right: black solid 1px;
+    display: inline-block;
+    width:30%;
+    height:100%;
+
+}
+
+.products{
+   
+    display: inline-block;
+    width:70%;
+    height:100%;
+    position: absolute;
+    right:0;
+    overflow-y :scroll;
+}
+
+.container{
+    height: 100%;
+    width:100%;
+    
+}
+
+
+.productCard{
+    max-width: 150px;
+    margin:10px;
+    display: inline-block;
+    width:auto;
+  }
+  
+  .example-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

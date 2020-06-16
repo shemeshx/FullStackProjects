@@ -1,0 +1,197 @@
+body{
+    width:100vw;
+    height: 100vh;
+  
+}
+#info{
+    margin : 5px;
+}
+.modalRow{
+    line-height: 50%;
+}
+.trashBtn{
+    background:url('https://img.icons8.com/color/48/000000/trash.png') no-repeat;
+    cursor:pointer;
+    border:none;
+    width:48px;
+    height:48px;
+    
+}
+
+
+#chart{
+    width:100%;
+    height:100%;
+    margin-top:5%;
+}
+#popup{
+    top:15%;
+    z-index:100000;
+}
+.nav-pills{
+    margin-bottom: 3px;
+}
+.form-inline{
+    justify-self: end;
+}
+.parallax-window {
+    min-height: 6000px;
+    width:100%;
+    background: transparent;
+    
+}
+
+.nav-pills .nav-link.active, .nav-pills .show>.nav-link {
+    color: #fff;
+    background-image: linear-gradient(to right, #5a5858, #5d5c5d, #606061, #636465, #676868);
+}
+.nav-link{
+    color: #fff;
+}
+.nav-link:hover{
+    color: rgb(83, 83, 83);
+}
+.btn-outline-success {
+    color: #fff;
+    border-color: #fff;
+}
+
+.fixed-top{
+    animation: smoothScroll 1s forwards;
+}
+/* .wrap{
+    width:100%;
+    height: 100%;
+} */
+@keyframes smoothScroll {
+	0% {
+		transform: translateY(-60px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+/* about parallax */
+#box-1{
+    height:80vh;
+    width:100%;
+    background-image:url('box1.jpg');
+    background-size:cover;
+    display:table;
+    background-attachment:fixed;
+    border: 10px solid rgba(255, 255, 255, 0.2);
+    opacity: 0.93;
+    margin-bottom: 10px;
+    
+  }
+  #box-2{
+    height:100vh;
+    width:100vw;
+    background-image:url('box2.jpg');
+    background-size:auto;
+    background-attachment:fixed; 
+    display:table;
+    margin-bottom: 10px;
+    opacity: 0.85;
+  }
+  #box-3{
+    height:100vh;
+    width:100%;
+    background-image:url('box3.jpg');
+    background-size:auto;
+     background-attachment:fixed;
+    display:table;
+    font-family: 'Courgette', cursive;
+   position: relative;
+   opacity: 0.93;
+  }
+
+#box-header1{
+    position:absolute;
+    left:40%;
+    top:38%;
+    font-family: 'Averia Serif Libre', cursive; 
+    font-weight:bold;
+    font-size:70px;
+}
+#box-content1{
+    position:absolute;
+    left:50%;
+    top:50%;
+    font-family: 'Averia Serif Libre', cursive; 
+    font-size:35px;
+}
+
+#box-content3{
+    font-size: 100px;
+    position: absolute;
+    left:8%;
+    top:70%;
+}
+@import url(https://fonts.googleapis.com/css?family=Montserrat);
+
+html, body{
+  height: 100%;
+  font-weight: 800;
+}
+
+body{
+  background: #030321;
+  font-family: Arial;
+}
+
+svg {
+    display: block;
+    font: 10em 'Montserrat';
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+}
+
+.text-copy {
+    fill: none;
+    stroke: white;
+    stroke-dasharray: 6% 29%;
+    stroke-width: 4px;
+    stroke-dashoffset: 0%;
+    animation: stroke-offset 5.5s infinite linear;
+}
+
+.text-copy:nth-child(1){
+	stroke: blue;
+	animation-delay: -1;
+}
+
+.text-copy:nth-child(2){
+	stroke: #282828;
+	animation-delay: -2s;
+}
+
+.text-copy:nth-child(3){
+	stroke: rgb(0, 106, 255);
+	animation-delay: -3s;
+}
+
+.text-copy:nth-child(4){
+	stroke: rgb(2, 0, 66);
+	animation-delay: -4s;
+}
+
+.text-copy:nth-child(5){
+	stroke: rgb(199, 214, 0);
+	animation-delay: -5s;
+}
+#content-box2{
+    position: relative;
+    width:70%;
+    height:30%;
+    left:15%;
+    background-color: rgba(255,255,255,0.6);
+    font-size: 20px;
+    padding:10px;
+}
+@keyframes stroke-offset{
+	100% {stroke-dashoffset: -35%;}
+}
+@keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}
