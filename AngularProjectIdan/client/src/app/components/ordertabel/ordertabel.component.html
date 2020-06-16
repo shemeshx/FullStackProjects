@@ -1,0 +1,23 @@
+<table id="tblCustomers" cellspacing="0" cellpadding="0">
+    <tr>
+        <th>product name</th>
+        <th>amount</th>
+        <th>price</th>
+    </tr>
+    <tr *ngFor="let item of Items" >
+        <th>{{item.product_name}}</th>
+        <th>{{item.count}}</th>
+        <th>{{item.weighted_price}}₪</th>
+    </tr>
+    <tr>
+        <th>Order Summary</th>
+        <th>total products in cart:{{totalProd}}</th>
+        <th>total price for payment:{{totalPrice}}₪</th>
+    </tr>
+
+</table>
+<br/>
+    <button class="btn" (click)="createPdf($event)" mat-raised-button
+    color="primary">
+        Export
+    </button>

@@ -1,0 +1,60 @@
+<body>
+  
+  <mat-toolbar color="primary">
+    <span>Idan's Market!</span>
+    <div class="links">
+    </div>
+  </mat-toolbar>
+  
+  <div class="grid-container">
+    <div class="pannel msg">
+      <h3 class="letsLogin">Let's Login!</h3>
+      <form class="example-form" [formGroup]="form" (ngSubmit)="signin($event)">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="username" type="text" formControlName="username">
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-error *ngIf="username.hasError('required')">
+            username is <strong>required</strong>
+          </mat-error>
+            </mat-form-field>
+            
+            <mat-form-field class="example-full-width">
+              <input matInput placeholder="password" type="password" formControlName="password">
+              <mat-icon matSuffix>lock_open</mat-icon>
+              <mat-error *ngIf="password.hasError('required')">
+                password is <strong>required</strong>
+              </mat-error>
+              <mat-error *ngIf="password.hasError('minlength')">
+                <strong>password must contain at least 4 characters</strong> 
+              </mat-error>
+            </mat-form-field>
+            <button type="submit" mat-stroked-button color="primary" [disabled]="form.invalid" class="loginbtn">login</button> 
+            <a mat-raised-button color="primary" routerLink="/register" class="loginbtn">register</a>
+          </form>
+        </div>
+      <div class="pannel">
+        <img height="500px" width="700px" src="https://images.pexels.com/photos/207983/pexels-photo-207983.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="">
+          <div class="msg">Hey! it's Idan Shemesh Shop! you can find a lot of items, you will get your staff soon as possible! Have fun! </div>
+      </div>
+    <div class="pannel">
+      <div class="containerMsg">
+        <div class="msg" *ngIf="haveCart==1">You have an open cart: 
+          <br>
+          <p *ngIf="totalProd">total cart item: <span class="highlight">{{totalProd}}</span></p> &nbsp;&nbsp;
+          <p *ngIf="totalPrice">price: <span class="highlight">{{totalPrice}}₪</span></p> &nbsp;&nbsp;
+          <p *ngIf="CreateDate">Date of creation: <span class="highlight">{{CreateDate}}</span></p>
+        </div>
+        <p class="msg lastOrder" *ngIf="haveCart==2">your last order: &nbsp;&nbsp;
+          Total price :<span class="highlight">{{order.final_price}}₪</span>&nbsp;&nbsp;
+          <br>
+        Was shipped on :  <span class="highlight">{{orderDate}}</span>
+        <br>
+      </p>
+      <p class="msg" *ngIf="haveCart==3">Lets create new cart...</p>
+    </div>
+    <button class="btn" type="submit" mat-raised-button color="primary" [routerLink]="['/home']" *ngIf="haveCart==1" >continue</button>
+    <button class="btn" type="submit" mat-raised-button color="primary"  [routerLink]="['/home']" (click)="createCart($event)" *ngIf="haveCart==3" >Lets create cart</button>
+    <button class="btn" type="submit" mat-raised-button color="primary"  [routerLink]="['/home']" (click)="createCart($event)" *ngIf="haveCart==2" >Lets create cart again</button>
+  </div>
+</div>
+</body>

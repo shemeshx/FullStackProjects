@@ -1,0 +1,45 @@
+<div>
+    <form class="example-form" [formGroup]="form" (ngSubmit)="newProduct($event)">
+        
+        <mat-form-field class="example-full-width">
+            <mat-label>product name</mat-label>
+            <input matInput placeholder="product name" type="text" formControlName="product_name">
+            <mat-icon matSuffix>shopping_basket</mat-icon>
+            <mat-error *ngIf="product_name.hasError('required')">
+                product name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>product image</mat-label>
+            <input matInput placeholder="image path" type="text" formControlName="img">
+            <mat-icon matSuffix>image</mat-icon>
+            <mat-error *ngIf="img.hasError('required')">
+                image path is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>product category</mat-label>
+            <mat-select formControlName="category_id" required>
+                <mat-option *ngFor="let category_id of categories" [value]="category_id.id">{{category_id.category_name}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="category_id.hasError('required')">
+                category is <strong>required</strong></mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>product price</mat-label>
+            <input matInput formControlName="price" 
+                placeholder="product price" type="number">
+                <mat-icon matSuffix>account_balance_wallet</mat-icon>
+            <mat-error *ngIf="price.hasError('required')">
+                price is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <button style="margin:2px" type="submit" mat-flat-button color="primary" [disabled]="form.invalid" >Add</button> 
+        <button style="margin:2px" type="click" mat-flat-button color="primary" (click)=" close()" >Close</button> 
+
+        
+    </form>
+</div>

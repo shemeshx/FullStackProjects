@@ -1,0 +1,50 @@
+<body>
+  
+  <mat-toolbar class="toolBar">
+      <span>Idan's Market!</span>
+    <input matInput class="search" placeholder="search" type="text" [(ngModel)]="query" >
+    <button mat-icon-button (click)="logout()"  class="logout">
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+  </mat-toolbar>
+  
+  
+  
+  <div
+  mwlResizable
+  [enableGhostResize]="true"
+  [resizeEdges]="{bottom: false, right: true, top: false, left: false}"
+  (resizeEnd)="onResizeEnd($event)"
+  class="sidebar"
+  style='
+ max-width:50%;
+ min-width:5%;
+ '
+  [style.width.px]="width"><cart></cart></div>
+  
+  
+  <div class="main">
+    <div class="catagories">
+      <button type="button" class="category" (click)="getProducts()">All products</button>  
+      <button type="button" class="category" *ngFor="let category of categories" (click)="productByCategory(category.id)">{{category.category_name}}</button>
+    </div>
+    
+    
+    <!-- for card -->
+    <div class="products">
+      <mat-card class="example-card" *ngFor="let product of products | search:query" draggable="true">
+        <img class="imgCard" mat-card-image src={{product.img}} alt={{product.products_name}}>
+        <div>{{product.product_name}}</div>
+        <mat-card-subtitle>price:{{product.price}}₪</mat-card-subtitle>
+        <mat-card-actions>
+          <button mat-button (click)="add(product)">+</button>
+          <span *ngIf="this.chprod==product.id">amount:{{amount}}</span>
+          <button mat-button (click)="delete()">-</button>
+          <button mat-mini-fab color="primary" (click)="submit(product)">add</button>
+          
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</body>

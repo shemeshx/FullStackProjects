@@ -1,0 +1,35 @@
+
+<body>
+  
+  <mat-toolbar class="toolBar">
+    <span>Idan's Market!</span>
+    <button mat-icon-button class="logout" (click)="logout()" >
+      <mat-icon>exit_to_app</mat-icon>
+      <span>Logout</span>
+    </button>
+    <button mat-icon-button (click)="openDialog()" >
+      <mat-icon>fiber_new</mat-icon>
+    </button>
+    <input matInput class="search" placeholder="search" type="text" [(ngModel)]="query" >
+  </mat-toolbar>
+  
+  <div class="main">
+    <div class="catagories">
+      <button type="button" class="category" (click)="getProducts()">All products</button>  
+      <button class="category" type="button"  *ngFor="let category of categories" (click)="productByCategory(category.id)">{{category.category_name}}</button>
+    </div>
+    
+    
+  
+    <div class="products">
+      <mat-card class="example-card" *ngFor="let product of products | search:query">
+        <img class="imgCard" mat-card-image src={{product.img}} alt={{product.products_name}}>
+        <div>{{product.product_name}}</div>
+        <mat-card-subtitle>{{product.price}}₪</mat-card-subtitle>
+        <mat-card-actions>
+          <mat-icon (click)="openDi(product)"> border_color</mat-icon> 
+        </mat-card-actions>
+      </mat-card>
+    </div>
+  </div>
+</body>

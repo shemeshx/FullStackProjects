@@ -1,0 +1,50 @@
+  div{
+    margin: 10px;
+    }
+
+    .login{
+      position: absolute;
+      right:10px;
+      top:0.5%;
+
+    }
+      .example-form {
+        margin:100px auto;
+        min-width: 150px;
+        max-width: 500px;
+        width: 100%;
+      }
+      .example-full-width {
+        width: 100%;
+      }
+      .container{
+          height: 100% !important;
+          background-image: url('https://www.iamexpat.de/sites/default/files/styles/article--full/public/registration-germany.jpg?itok=AK8KV9sR');
+          background-repeat: no-repeat;
+          background-size: cover;
+      
+      }
+      .mat-tab-group{
+          height: 100% !important;
+      }
+ 
+    
+    .header{
+      position: absolute;
+      top:5%;
+      font-size: 50px;
+      color: #2c008dce;
+      left: 50%;
+      transform: translate(-50%,0);
+      
+    }
+
+    .container{
+      margin:0;
+    }
+    .btn{
+      margin: 10px;
+    }
+    input{
+      background-color: aliceblue;
+    }

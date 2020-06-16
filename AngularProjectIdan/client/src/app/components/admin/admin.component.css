@@ -1,0 +1,153 @@
+.search{
+    position: relative;
+    left: 70%;
+}
+.mwlResizable{
+    box-sizing: border-box;
+    display: inline;
+}
+
+.sidebar{
+    border: 2px white solid;
+    height: 90.5% !important;
+    width: 25%;
+    background-color: green !important;
+}
+.catagories{
+    display: inline;
+    width: 100% !important;
+}
+.main{
+    display: inline;
+    width: 60% !important;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    height: 80%;
+}
+.cell{
+    background-color: cadetblue;
+    font-size: 20px;
+    padding: 25px;
+    border: black 1px solid;
+    color: rgb(26, 48, 121) !important;
+}
+
+.imgCard{
+    width: 100% !important;
+    height: 30% !important;
+    align-self: center !important;
+}
+.example-card{
+    width: 20%;
+    height: 20%;
+    margin: 20px;
+    display: inline-block;
+    color: black;
+    background-color: transparent !important; 
+    font-size: 20px !important;
+}
+.toolBar{
+    background-color:green !important;
+    border: rgb(255, 255, 255) 2px solid;
+    height: 10% !important;
+}
+.products{
+    overflow-y: scroll;
+    align-items: center;
+}
+.search{
+    position: relative;
+    left: 70%;
+}
+.mwlResizable{
+    box-sizing: border-box;
+    display: inline;
+
+}
+
+.sidebar{
+    border: 2px white solid;
+    height: 90.5% !important;
+    width: 25%;
+    background-color: green; 
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid #00CF91;
+    border-radius: 7px 7px 7px 7px;
+    position: fixed;
+    left: 0;
+    float: left;
+    top:80px;
+    overflow: auto;
+    overflow-x: hidden;
+    position: fixed;
+    z-index: 99999999!important;
+}
+.catagories{
+    display: inline;
+    width: 100% !important;
+}
+.main{
+    display: inline;
+    width: 60% !important;
+    position: absolute;
+    top: 15%;
+    left: 30%;
+    height: 80%;
+}
+.category{
+    font-size: 20px;
+    padding: 25px;
+    border: black 1px solid;
+    background-color:#70E852;  
+    margin: 5px;
+
+}
+
+
+.imgCard{
+    width: 100% !important;
+    height: 30% !important;
+    align-self: center !important;
+}
+.example-card{
+    width: 20%;
+    height: 20%;
+    margin: 20px;
+    display: inline-block;
+    color: black;
+    background-color: white !important; 
+    font-size: 20px !important;
+}
+.toolBar{
+    background-color:#117243 !important;
+    border: rgb(255, 255, 255) 2px solid;
+    height: 10% !important;
+    position: fixed;
+    z-index: 999;
+}
+.products{
+    overflow-y: auto;
+    align-items: center;
+
+}
+
+html,body{
+    height: 100vh;
+    width: 100vw;
+    overflow: auto;
+    overflow-x: hidden;
+    position: fixed;
+    background-image: url('https://www.portugalresident.com/wp-content/uploads/2019/11/picture-onderzoeksgroep-organizations-and-markets_0.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .logout{
+      position: absolute;
+      left: 200px;
+  }
+
+
+

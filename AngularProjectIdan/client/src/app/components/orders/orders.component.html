@@ -1,0 +1,80 @@
+<body>
+    <mat-tab-group mat-align-tabs="center" dynamicHeight="true">
+        <mat-tab *ngIf="tab==1" class="firstTab" label="First part">
+            
+            <div *ngFor="let item of Items" class="cart">
+                <div class="item">
+                    <span [innerHTML]="item.product_name" ></span>
+                    <br>
+                    <span>Product Amount: {{item.count}}</span>
+                    <br>
+                    <span>Product Price: {{item.weighted_price}}₪</span>
+                </div>
+            </div>
+            <br>
+            <div>total products in cart: {{totalProd}} </div>
+            <div>total price for payment: {{totalPrice}}₪</div>
+            <button class="btn" (click)="tab=2" mat-raised-button
+                color="primary">let's order!</button>
+                <button  class="btn" (click)="close()" mat-raised-button
+                color="primary">back shopping</button>
+        </mat-tab>
+
+        <mat-tab *ngIf="tab == 2" class="firstTab" label="Second part">
+            <form class="example-form" [formGroup]="form" (ngSubmit)="createOrder($event)">
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Credit Card Number" type="text" formControlName="creditCard">
+                    <mat-error *ngIf="creditCard.hasError('required')">
+                            Credit Card Number is <strong>required</strong></mat-error>   
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Shipping Date</mat-label>
+                    <input formControlName="shippingDate" matInput [matDatepicker]="date" >
+                    <mat-datepicker-toggle matSuffix [for]="date"></mat-datepicker-toggle>
+                    <mat-datepicker #date></mat-datepicker>
+                <mat-error *ngIf="shippingDate.hasError('required')">
+                    Shipping Date is <strong>required</strong></mat-error>   
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>City</mat-label>
+                    <mat-select formControlName="city" required [(ngModel)]="data.city">
+                        <mat-option *ngFor="let city of cities" [value]="city.name">{{city.name}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="city.hasError('required')">
+                        City is <strong>required</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Street</mat-label>
+                    <input matInput formControlName="street" [errorStateMatcher]="matcher"
+                        placeholder="put your Street and house number"  [(ngModel)]="data.street">
+                    <mat-error *ngIf="street.hasError('required')">
+                        street is <strong>required</strong></mat-error>
+                    <mat-error *ngIf="street.hasError('pattern')">
+                        must contain <strong>letters</strong> and <strong>numbers</strong></mat-error>
+                </mat-form-field>
+                <button class="btn" (click)="tab=1" mat-raised-button
+                color="primary">Go back</button>
+                <button [disabled]="form.invalid" class="btn" type="submit" (click)="submit=true"  mat-raised-button
+                color="primary">submit</button>
+                <button class="btn" (click)="tab=3" *ngIf="submit==true" mat-raised-button
+                color="primary">print reciving</button>
+                <button *ngIf="submit==true" class="btn" (click)="closehome()" mat-raised-button
+                color="primary">back to home page</button>
+            </form>
+        </mat-tab>
+
+        <mat-tab *ngIf="tab==3" class="firstTab" label="reciving">
+<ordertabel></ordertabel>
+<button class="btn" (click)="closehome()" mat-raised-button
+color="primary">back to home page</button>
+        </mat-tab>
+
+
+</mat-tab-group>  
+ 
+</body>

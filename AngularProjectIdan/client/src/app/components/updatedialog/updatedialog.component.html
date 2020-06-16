@@ -1,0 +1,44 @@
+<div>
+    <form class="example-form" [formGroup]="form" #update="ngForm" (ngSubmit)="updateproduct(update)">
+        
+        <mat-form-field class="example-full-width">
+            <mat-label>product name</mat-label>
+            <input matInput placeholder="put your product name" type="text" formControlName="product_name" [(ngModel)]="data.product_name">
+            <mat-icon matSuffix>shopping_basket</mat-icon>
+            <mat-error *ngIf="product_name.hasError('required')">
+                product name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>product image</mat-label>
+            <input matInput placeholder="put image path here" type="text" formControlName="img" [(ngModel)]="data.img">
+            <mat-icon matSuffix>art_track</mat-icon>
+            <mat-error *ngIf="img.hasError('required')">
+                image path is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>product category</mat-label>
+            <mat-select formControlName="category_id" required [(ngModel)]="data.category_id">
+                <mat-option *ngFor="let category_id of categories" [value]="category_id.id">{{category_id.category_name}}
+                </mat-option>
+            </mat-select>
+            <mat-error *ngIf="category_id.hasError('required')">
+                category is <strong>required</strong></mat-error>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-label>product price</mat-label>
+            <input matInput formControlName="price" 
+                placeholder="put product price" type="number" [(ngModel)]="data.price">
+                <mat-icon matSuffix>monetization_on</mat-icon>
+            <mat-error *ngIf="price.hasError('required')">
+                price is <strong>required</strong></mat-error>
+        </mat-form-field>
+        <button type="submit" mat-fab color="warn" [disabled]="form.invalid" >save changes</button> 
+        <button type="click" mat-fab color="warn" (click)=" close()" >close</button> 
+        
+    </form>
+</div>

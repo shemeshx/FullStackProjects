@@ -1,0 +1,129 @@
+<mat-toolbar color="primary">
+    <span>Idan's Market!</span>
+  
+    <div class="login">
+        <a mat-flat-button color="warn" [routerLink]="['/login']" >Back to login</a>
+    </div>
+  </mat-toolbar>
+  
+<div class="container">
+    <mat-tab-group mat-align-tabs="center" dynamicHeight="true">
+        <mat-tab *ngIf="tab==true" class="firstTab" label="First part">
+            <span class="header">Let's Register!</span>
+            <form class="example-form" [formGroup]="panelA" (ngSubmit)="check($event)">
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="username" type="text" formControlName="username">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                    <mat-error *ngIf="username.hasError('required')">
+                        username is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="password" type="password" formControlName="password">
+                    <mat-icon matSuffix>lock_open</mat-icon>
+                    <mat-error *ngIf="password.hasError('required')">
+                        password is <strong>required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="password.hasError('minlength')">
+                        <strong>password must contain at least 4 characters</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="confrim password" type="password" formControlName="conpassword">
+                    <mat-icon matSuffix>check_circle</mat-icon>
+                    <mat-error *ngIf="conpassword.hasError('required')">
+                        password is <strong>required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="conpassword.hasError('minlength')">
+                        <strong>confrimed password must contain at least 4 characters</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="ID" type="text" formControlName="id">
+                    <mat-icon matSuffix>fingerprint</mat-icon>
+                    <mat-error *ngIf="id.hasError('required')">
+                        ID is <strong>required</strong>
+                    </mat-error>
+                    <mat-error *ngIf="id.hasError('minlength') || id.hasError('maxlength')">
+                        id must be <strong>9 charecters</strong></mat-error>
+                    <mat-error *ngIf="id.hasError('pattern')">
+                        id must be <strong>only numbers</strong></mat-error>
+                </mat-form-field>
+                <div *ngIf="al == true" color="green">Let's Continue!</div>
+                <button [disabled]="panelA.invalid" class="btn" type="submit" mat-raised-button
+                color="primary">check</button>
+                <button [disabled]="al == false" class="btn" (click)="tab=false"  mat-raised-button
+                color="primary">next</button>
+                
+
+            </form>
+        </mat-tab>
+        <!-- start of second tab  -->
+        <mat-tab *ngIf="tab == false" class="firstTab" label="Second part">
+            <form class="example-form" [formGroup]="panelB" (ngSubmit)="register($event)">
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="put your first name" type="text" formControlName="f_name">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                    <mat-error *ngIf="f_name.hasError('required')">
+                        first name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="put your last name" type="text" formControlName="l_name">
+                    <mat-icon matSuffix>account_circle</mat-icon>
+                    <mat-error *ngIf="l_name.hasError('required')">
+                        last name is <strong>required</strong>
+                    </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>City</mat-label>
+                    <mat-select formControlName="city" required>
+                        <mat-option *ngFor="let city of cities" [value]="city.name">{{city.name}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="city.hasError('required')">
+                        City is <strong>required</strong></mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="example-full-width">
+                    <mat-label>Street</mat-label>
+                    <input matInput formControlName="street" [errorStateMatcher]="matcher"
+                        placeholder="put your Street and house number">
+                    <mat-error *ngIf="street.hasError('required')">
+                        street is <strong>required</strong></mat-error>
+                    <mat-error *ngIf="street.hasError('pattern')">
+                        must contain <strong>letters</strong> and <strong>numbers</strong></mat-error>
+                </mat-form-field>
+                <button class="btn" (click)="tab=true" mat-raised-button
+                color="primary">go back</button>
+                <button [disabled]="panelB.invalid" class="btn" type="submit" mat-raised-button
+                color="primary">submit</button>
+            </form>
+        </mat-tab>
+
+    </mat-tab-group>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
