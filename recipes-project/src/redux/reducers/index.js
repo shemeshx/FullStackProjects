@@ -1,16 +1,16 @@
-import { ADD_ARTICLE } from "../constants/index";
 
 const initialState = {
-    articles: []
+    users: []
   };
   
   function rootReducer(state = initialState, action) {
-    if (action.type === ADD_ARTICLE) {
-        return Object.assign({}, state, {
-          articles: state.articles.concat(action.payload)
-        });
+    if (action.type === "ADD_USER") {
+      return {
+        ...state,
+        users:[...state.users,action.payload]
       }
-      return state;
+    }
+    return state;
   };
   
   export default rootReducer;
