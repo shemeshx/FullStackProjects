@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useEffect } from 'react'
+import { useSelector } from 'react-redux'
 
-export default function List() {
+function List() {
+    const state = useSelector(state => state.articles);
+
     return (
         <div>
-            
+            {state}
         </div>
     )
 }
+export default List;

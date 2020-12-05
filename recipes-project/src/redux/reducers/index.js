@@ -1,4 +1,4 @@
-import { ADD_ARTICLE } from "/redux/constants/index";
+import { ADD_ARTICLE } from "../constants/index";
 
 const initialState = {
     articles: []
