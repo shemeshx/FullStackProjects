@@ -1,18 +1,20 @@
 import './App.css';
-import List from './components/List'
+import RecipesGrid from './components/RecipesGrid'
 import { useDispatch } from 'react-redux'
-import { addUser } from './redux/actions/index'
-import { useEffect } from 'react';
+import SideMenu from './components/SideMenu';
+import { makeStyles } from '@material-ui/core/styles';
+import Icon from '@material-ui/core/Icon';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    display: 'flex',
+  }}));
 function App() {
-  const dispatch = useDispatch();
+  const classes = useStyles();
 
-  const handleClick = () =>{
-    dispatch(addUser());
-  }
   return (
-    <div className="App">
-      <List/>
-      <button type="button" width="200px" height="200px" onClick={handleClick}>check</button>
+    <div className={classes.root}>
+      <SideMenu/>
+      <RecipesGrid/>
     </div>
   );
 }
